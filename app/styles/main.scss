@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Raleway');
+
+$baseFont: 'Montserrat','Helvetica Neue', 'Helvetica', sans-serif;
+$headingFont: 'Sacramento','Cinzel Decorative', cursive, serif;
+
+body {
+  //min-width: 1200px;
+  font-family: $baseFont;
+  font-size: 16px;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(144deg, #02ffbe, #023fff, #5602ff, #fe8eff, #91fffb);
+  background-size: 1000% 1000%;
+  //animation: fadein .2s ease forwards, rotateGradient 60s ease infinite;
+  opacity: 0;
+  animation: fadeIn .5s ease forwards;
+  // animation-duration: 60s;
+  // animation-timing-function: ease;
+  // animation-iteration-count: infinite;
+  // animation-delay: -10s;
+  background-attachment: fixed;
+  background-position:20% 20%;
+  perspective: 1000;
+  perspective-origin: 50% 50%;
+  //transition: background .5s ease;
+}
+
+// wrap {
+//   opacity: 0;
+//   animation: fadeIn .2s ease forwards;
+// }
+// nav {
+//   height: 4rem;
+// }
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 3rem;
+  transform-style: preserve-3d;
+}
+
+header, section {
+  box-sizing: border-box;
+  flex-grow: 1;
+  //flex-basis: 36rem;
+  width: 32rem;
+  max-width: 36rem;
+  height: 20rem;
+  margin: 2rem;
+  //overflow: hidden;
+  transform-origin: 20% center;
+}
+
+header h1, header h2, section {
+  animation: slideIn 1s ease;
+  opacity: 0;
+  transform: rotateX(0deg) translateY(0rem);
+  animation-fill-mode: forwards;
+}
+
+header ul, header:after {
+  animation: fadeIn 1s ease;
+  opacity: 0;
+  transform: rotateX(0deg) translateY(0rem);
+  animation-fill-mode: forwards;
+}
+
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+section {
+  flex-shrink: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: .125rem;
+  background: rgba(255,255,255,.7);
+  animation-delay: .3s;
+  h3 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+    animation: colorFade 60s ease infinite;
+  }
+}
+
+h1, h2 {
+  width: 24rem;
+  color: white;
+  font-weight: 400;
+  margin: 0;
+}
+
+h1 {
+  margin: -1rem 0 0 -.125rem;
+  font-size: 4rem;
+  line-height: 6rem;
+  animation-delay: .4s;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 3rem;
+  animation-delay: .6s;
+}
+
+header:after{
+  content:"";
+  height: 1px;
+  width: 10rem;
+  background: rgba(255,255,255,1);
+  position: absolute;
+  bottom: .125rem;
+  left: 0;
+  animation-delay: 1s;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0 3rem 4rem .125rem;
+  animation-delay: .8s;
+
+  li {
+    font-size: .75rem;
+    letter-spacing: .2rem;
+    color: white;
+    flex-shrink: 1;
+    text-transform: uppercase;
+  }
+}
+
+
+@-webkit-keyframes rotateGradient {
+    0%{background-position:14% 0%}
+    50%{background-position:87% 100%}
+    100%{background-position:14% 0%}
+}
+@-moz-keyframes rotateGradient {
+    0%{background-position:14% 0%}
+    50%{background-position:87% 100%}
+    100%{background-position:14% 0%}
+}
+@-o-keyframes rotateGradient {
+    0%{background-position:14% 0%}
+    50%{background-position:87% 100%}
+    100%{background-position:14% 0%}
+}
+@keyframes rotateGradient {
+    0%{background-position:14% 0%}
+    50%{background-position:87% 100%}
+    100%{background-position:14% 0%}
+}
+
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: rotateX(7deg) translateY(3rem) scale(1.05);
+  }
+  20% {
+    // opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes colorFade {
+    0% { color: #ffffff }
+    20% {color: #02ffbe; }
+    40% {color: #023fff; }
+    60% {color: #5602ff; }
+    80% {color: #fe8eff; }
+    100% {color: #91fffb; }
+}
